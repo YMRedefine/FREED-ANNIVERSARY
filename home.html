@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <header><div class="header-container">
+  <img src="3.png" class="header-image">
+</div></header>
+  <title>YM REDIFINE</title>
+  <style>
+    .faq-container {
+  max-width: 600px;
+  background: #3B3030;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 100px auto 40px auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.faq-container h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 0;
+  color: #EFE4D2;
+}
+
+.faq-answer {
+  display: none;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  color: #fff;
+}
+
+
+    body {
+      font-family: 'Arial Black', sans-serif;
+      background-image: url('BG.png');
+      background-repeat: repeat;
+      background-size: cover;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 200px;
+    }
+
+    .nav-button {
+      background-color: #8A784E;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-button:hover {
+      background-color: #695a36;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #4B352A;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      color: white;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 20px;
+    }
+
+    .modal-content button {
+      background-color: #8A784E;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .modal-content button:hover {
+      background-color: #695a36;
+    }
+
+    .cancel-btn {
+      background-color: #888 !important;
+    }
+
+.header-image {
+  width: 90%;
+  max-width: 900px;
+  height: auto;
+  border: 5px solid #3B3030;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 0%;         /* Ensure no extra space below image */
+}
+
+.buttons-container {
+  margin-top: 10px;         /* Adjust this value as needed (can be 0 too) */
+}
+
+.admin-button {
+  background-color: #8A784E;
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.admin-button:hover {
+  background-color: #695a36;
+}
+
+  </style>
+</head>
+<body>
+
+
+  <div class="button-container">
+    <button class="nav-button" onclick="showPopup('ticket')">GET TICKET</button>
+  </div>
+
+  
+
+  <div class="faq-container">
+  <h2>FAQs</h2>
+
+  <div class="faq-question" onclick="toggleFaq(this)">1. Where is the Anniversary happening?</div>
+  <div class="faq-answer">Sureshot Sportsville, Abad Santos Avenue, Tondo, Manila</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">2. When is the Anniversary happening?</div>
+  <div class="faq-answer">October 19, 2025</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">3. Who can attend FREED (YM's 50th Anniversary)?</div>
+  <div class="faq-answer">ALUMNIs of Youth Ministry and current YM Tribe</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">4. What's included in the cost of my registration?</div>
+  <div class="faq-answer">Access to the Venue, Food, Photobooth, and Merch</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">5. Can I attend online or see the Anniversary on demand?</div>
+  <div class="faq-answer">Unfortunately, online livestreaming is not available this time</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">6. How much is the ticket?</div>
+  <div class="faq-answer">Php 750 for students, Php 1,000 for adults. Sponsorships start at Php 1,000</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">7. Can I pay in cash on site during Sunday services?</div>
+  <div class="faq-answer">Yes. Visit Manila Faith Lobby after 10am service and look for Alexa Pidlaoan</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">8. What if I suddenly cannot attend? Can I cancel or transfer?</div>
+  <div class="faq-answer">Tickets are non-refundable but transferable. Message us: @ymredefine</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">9. When does the registration close?</div>
+  <div class="faq-answer">October 12, 2025</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">10. Are walk-ins allowed?</div>
+  <div class="faq-answer">Walk-ins are not allowed</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">11. Can I sponsor tickets?</div>
+  <div class="faq-answer">Yes! Use the “Sponsor a ticket” section and include their names</div>
+
+  <div class="faq-question" onclick="toggleFaq(this)">12. I want to support the Anniversary. How?</div>
+  <div class="faq-answer">Message us on Facebook: @ymredefine</div>
+</div>
+
+
+  <script>
+    
+
+function proceedToSponsorOptions() {
+  closePopup('sponsor-info-popup');
+  document.getElementById('sponsor-popup').style.display = 'flex';
+}
+
+
+
+    function closePopup(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    function toggleFaq(el) {
+    const answer = el.nextElementSibling;
+    answer.style.display = answer.style.display === "block" ? "none" : "block";
+  }
+
+  function showPopup() {
+      window.open("https://forms.gle/es3AhvKGfW3NWXVVA", "_blank");
+      hasUploadedProof = true;
+      document.getElementById("proof-btn").innerText = "Proof Uploaded ✅";
+      document.getElementById("proof-btn").disabled = true;
+      document.getElementById("submit-wrapper").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
